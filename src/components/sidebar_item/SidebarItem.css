@@ -1,0 +1,29 @@
+.sidebarItem{
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    padding-left: 2px;
+    cursor: pointer;
+}
+
+.sidebarItem:hover{
+    background-color: #340e36;
+    opacity: 0.9;
+}
+
+.sidebarItem__icon{
+    padding: 10px;
+    font-size: 15px !important;
+}
+
+.sidebarItem__channel{
+    padding: 10px 0;
+}
+
+.sidebarItem__hash{
+    padding: 10px;
+}
+
+.sidebarItem > h3{
+    font-weight: 500;
+}
