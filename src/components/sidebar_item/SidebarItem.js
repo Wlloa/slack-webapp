@@ -9,7 +9,7 @@ function SidebarItem({Icon, title, id, allowAddition=false}) {
 
     const addChannel = ()=>{
         const channelName = prompt("Enter channel's name");
-        if(channelName.length > 0){
+        if(channelName?.length > 0){
             console.log(channelName);
             db.collection('rooms').add({
                 name:channelName,
@@ -23,7 +23,10 @@ function SidebarItem({Icon, title, id, allowAddition=false}) {
     }
 
     const changeChannel = ()=>{
-        history.push(`/rooms/${id}`)
+        if(id){
+            history.push(`/room/${id}`);
+        }
+        
     }
 
     return (

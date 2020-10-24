@@ -3,6 +3,7 @@ import './App.css';
 import Header from './components/header/Header';
 import Sidebar from './components/sidebar/Sidebar';
 import {Switch, BrowserRouter as Router, Route} from 'react-router-dom';
+import Chat from './components/chat/Chat';
 
 function App() {
   return (
@@ -15,8 +16,10 @@ function App() {
         <Sidebar/>
         
           <Switch>
-            <Route path="/"/>
-            <Route path="/room/:roomId"/>
+            <Route path="/" exact>
+              <h1>Welcome</h1>
+            </Route>
+            <Route path="/room/:roomId" component={Chat}/>
           </Switch>
         
         {/* React Router ---> chat screen */}

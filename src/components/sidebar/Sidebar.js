@@ -3,6 +3,7 @@ import './Sidebar.css';
 import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 import CreateIcon from '@material-ui/icons/Create';
 import SidebarItem from '../sidebar_item/SidebarItem';
+import AddOutlinedIcon from '@material-ui/icons/AddOutlined';
 import db from '../../firebase';
 
 function Sidebar() {
@@ -30,18 +31,10 @@ function Sidebar() {
                 </div>
                 <CreateIcon/>
             </div>
-            <SidebarItem title="Add Channel" allowAddition={true}/>
+            <SidebarItem title="Add Channel" Icon={AddOutlinedIcon} allowAddition={true}/>
             {channels?.map(channel=>(
                 <SidebarItem id={channel.id} title={channel.name}/>
             ))}
-
-            {/* <SidebarItem title={"_general"}/>
-            <SidebarItem title={"_general"}/>
-            <SidebarItem title={"_general"}/>
-            <hr/>
-            <SidebarItem title={"_general"}/>
-            <SidebarItem title={"_general"}/> */}
-
         
         </div>
     )

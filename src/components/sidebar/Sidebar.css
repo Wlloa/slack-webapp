@@ -2,7 +2,8 @@
     background-color: var(--slack-color);
     border-top: 1px solid #49274b;
     max-width: 260px;
-    min-height: 100vh;
+    /* min-height: 100vh; */
+    flex: 0.3;
     color: white;
 }
 
