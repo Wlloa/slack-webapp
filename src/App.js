@@ -1,15 +1,23 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import Header from './components/header/Header';
 import Sidebar from './components/sidebar/Sidebar';
 import {Switch, BrowserRouter as Router, Route} from 'react-router-dom';
 import Chat from './components/chat/Chat';
+import Login from './components/login/Login';
 
 function App() {
+
+  const [user, setUser] = useState(null);
+
   return (
     <div className="app">
     <Router>
-      {/* Header */}
+    {!user ? (
+      <Login/>
+    ):(
+      <>
+        {/* Header */}
       <Header/>
       <div className="app__body">
         {/* Sidebar */}
@@ -24,6 +32,9 @@ function App() {
         
         {/* React Router ---> chat screen */}
       </div>
+      </>
+    )}
+      
       
     </Router>
     </div>
