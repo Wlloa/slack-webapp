@@ -5,10 +5,12 @@ import CreateIcon from '@material-ui/icons/Create';
 import SidebarItem from '../sidebar_item/SidebarItem';
 import AddOutlinedIcon from '@material-ui/icons/AddOutlined';
 import db from '../../firebase';
+import { useStateValue } from '../context/StateProvider';
 
 function Sidebar() {
 
     const [channels, setChannels] = useState([]);
+    const [{user}] = useStateValue();
 
     useEffect(()=>{
         db.collection('rooms').onSnapshot(snapshot=>
@@ -26,7 +28,7 @@ function Sidebar() {
                     <h2>Clever Programmer</h2>
                     <h3>                    
                         <FiberManualRecordIcon/>
-                        Wil Ulloa
+                        {user?.displayName}
                     </h3>
                 </div>
                 <CreateIcon/>

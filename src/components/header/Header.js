@@ -1,17 +1,21 @@
 import React from 'react';
 import "./Header.css";
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import {Avatar} from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
+import { useStateValue } from '../context/StateProvider';
 
 function Header() {
+
+    const [{user}] = useStateValue();
+
     return (
         <div className="header">
             <div className="header__left">
-                <AccountCircleIcon className="header__avatar"
-                    alt=""
-                    src=""
+                <Avatar className="header__avatar"
+                    src={user?.photoURL}
+                    alt={user?.displayName}
                 />
                 <AccessTimeIcon/>
             </div>
