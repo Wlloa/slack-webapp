@@ -5,6 +5,7 @@ import StarBorderIcon from '@material-ui/icons/StarBorder';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 import './Chat.css';
 import Message from '../message/Message';
+import ChatInput from '../chat_input/ChatInput';
 
 
 function Chat() {
@@ -59,6 +60,7 @@ function Chat() {
                     />
                 ))}
             </div>
+            <ChatInput channelName={room?.name} channelId={roomId}/>
         </div>
     )
 }
