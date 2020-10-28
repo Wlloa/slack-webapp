@@ -2,7 +2,6 @@
     flex: 0.7;
     flex-grow: 1;
     overflow-y: scroll;
-    padding-bottom: 150px;
 }
 
 .chat__header{
@@ -33,4 +32,25 @@
 .chat__channelName > .MuiSvgIcon-root {
     margin-left: 10px;
     font-size: 18px;
+}
+
+.chat__messages{
+    max-height: calc(100vh - 62px - 97px - 60px);
+    overflow-y: scroll;
+}
+
+.chat__messageBody{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.message__input{
+    position: sticky;
+    bottom: 0;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0 ,0.32);
 }

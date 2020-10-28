@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './App.css';
 import Header from './components/header/Header';
 import Sidebar from './components/sidebar/Sidebar';
@@ -9,7 +9,6 @@ import { useStateValue } from './components/context/StateProvider';
 
 function App() {
 
-  //const [user, setUser] = useState(null);
   const [{user}, dispatch] = useStateValue();
 
   return (
@@ -36,7 +35,6 @@ function App() {
       </div>
       </>
     )}
-      
       
     </Router>
     </div>

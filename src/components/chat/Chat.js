@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import {useParams} from 'react-router-dom';
 import db from '../../firebase';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
@@ -7,12 +7,12 @@ import './Chat.css';
 import Message from '../message/Message';
 import ChatInput from '../chat_input/ChatInput';
 
-
 function Chat() {
 
     const [room, setRoom]  = useState({});
     const [messages, setMessages] = useState([]);
     const {roomId}= useParams();
+
 
     useEffect(()=>{
         if(roomId){
@@ -30,9 +30,12 @@ function Chat() {
                         snapchot.docs.map(doc=>doc.data()))
                 })
 
-        }
+        }      
         
-    },[roomId]) 
+    },[roomId]) ;
+
+    
+    
     console.log(room);
     console.log(messages);
     return (
@@ -50,17 +53,23 @@ function Chat() {
                     </p>
                 </div>
             </div>
-            <div className="chat__messages">
-                {messages?.map(({message, timestamp, user, userImage})=>(
-                    <Message
-                        message={message}
-                        timestamp={timestamp}
-                        user={user}
-                        userImage={userImage}
-                    />
-                ))}
+            <div className="chat__messageBody">
+                <div className="chat__messages">
+                    {messages?.map(({message, timestamp, user, userImage})=>(
+                        <Message
+                            message={message}
+                            timestamp={timestamp}
+                            user={user}
+                            userImage={userImage}
+                        />
+                        
+                    ))}
+                </div>
+                <div className="message__input">
+                    <ChatInput channelName={room?.name} channelId={roomId}/>
+                </div>
             </div>
-            <ChatInput channelName={room?.name} channelId={roomId}/>
+            
         </div>
     )
 }
