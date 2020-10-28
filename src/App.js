@@ -25,9 +25,7 @@ function App() {
         <Sidebar/>
         
           <Switch>
-            <Route path="/" exact>
-              <h1>Welcome</h1>
-            </Route>
+            <Route path="/" exact/>
             <Route path="/room/:roomId" component={Chat}/>
           </Switch>
         

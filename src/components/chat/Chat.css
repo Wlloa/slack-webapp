@@ -42,7 +42,8 @@
 .chat__messageBody{
     display: flex;
     flex-direction: column;
-    
+    min-height: calc(100vh - 60px - 62px);
+    justify-content: space-between;
 }
 
 .message__input{
