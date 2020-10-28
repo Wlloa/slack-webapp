@@ -6,10 +6,11 @@ import {Switch, BrowserRouter as Router, Route} from 'react-router-dom';
 import Chat from './components/chat/Chat';
 import Login from './components/login/Login';
 import { useStateValue } from './components/context/StateProvider';
+import Home from './components/home/Home';
 
 function App() {
 
-  const [{user}, dispatch] = useStateValue();
+  const [{user}] = useStateValue();
 
   return (
     <div className="app">
@@ -25,7 +26,7 @@ function App() {
         <Sidebar/>
         
           <Switch>
-            <Route path="/" exact/>
+            <Route path="/" exact component={Home}/>
             <Route path="/room/:roomId" component={Chat}/>
           </Switch>
         
